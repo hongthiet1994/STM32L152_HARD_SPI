@@ -148,43 +148,44 @@ int main(void)
     /* Clear the RxBuffer */
     Fill_Buffer(RxBuffer, TXBUFFERSIZE);
 
-    PressedButton = Read_Joystick();
-    while (PressedButton == JOY_NONE)
-    {
-      PressedButton = Read_Joystick();
-    }
-
-    switch (PressedButton)
-    {
-      /* JOY_RIGHT button pressed */
-      case JOY_RIGHT:
-        CommandTransmitted = CMD_RIGHT;
-        NumberOfByte = CMD_RIGHT_SIZE;
-        break;
-      /* JOY_LEFT button pressed */ 
-      case JOY_LEFT:
-        CommandTransmitted = CMD_LEFT;
-        NumberOfByte = CMD_LEFT_SIZE;
-        break;
-      /* JOY_UP button pressed */
-      case JOY_UP:
-        CommandTransmitted = CMD_UP;
-        NumberOfByte = CMD_UP_SIZE;
-        break;
-      /* JOY_DOWN button pressed */
-      case JOY_DOWN:
-        CommandTransmitted = CMD_DOWN;
-        NumberOfByte = CMD_DOWN_SIZE;
-        break;
-      /* JOY_SEL button pressed */
-      case JOY_SEL:
-        CommandTransmitted = CMD_SEL;
-        NumberOfByte = CMD_SEL_SIZE;
-        break;
-      default:
-        break;
-    }
-
+//    PressedButton = Read_Joystick();
+//    while (PressedButton == JOY_NONE)
+//    {
+//      PressedButton = Read_Joystick();
+//    }
+//
+//    switch (PressedButton)
+//    {
+//      /* JOY_RIGHT button pressed */
+//      case JOY_RIGHT:
+//        CommandTransmitted = CMD_RIGHT;
+//        NumberOfByte = CMD_RIGHT_SIZE;
+//        break;
+//      /* JOY_LEFT button pressed */ 
+//      case JOY_LEFT:
+//        CommandTransmitted = CMD_LEFT;
+//        NumberOfByte = CMD_LEFT_SIZE;
+//        break;
+//      /* JOY_UP button pressed */
+//      case JOY_UP:
+//        CommandTransmitted = CMD_UP;
+//        NumberOfByte = CMD_UP_SIZE;
+//        break;
+//      /* JOY_DOWN button pressed */
+//      case JOY_DOWN:
+//        CommandTransmitted = CMD_DOWN;
+//        NumberOfByte = CMD_DOWN_SIZE;
+//        break;
+//      /* JOY_SEL button pressed */
+//      case JOY_SEL:
+//        CommandTransmitted = CMD_SEL;
+//        NumberOfByte = CMD_SEL_SIZE;
+//        break;
+//      default:
+//        break;
+//    }
+//    */
+    
     /* Enable the DMA channel */
     DMA_Cmd(SPIx_RX_DMA_CHANNEL, ENABLE);
     
