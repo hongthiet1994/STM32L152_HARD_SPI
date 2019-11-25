@@ -1,58 +1,58 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.2.214/W32 for ARM                  25/Nov/2019  15:47:03
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  25/Nov/2019  16:02:15
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
-#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Exe\STM3210E-EVAL.out
 #    Map file     =
-#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\List\STM3210E-EVAL.map
 #    Command line =
-#        -f C:\Users\hongt\AppData\Local\Temp\EW5272.tmp
-#        ("D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        -f C:\Users\hongt\AppData\Local\Temp\EW3882.tmp
+#        ("D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\main.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\misc.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\startup_stm32l1xx_hd.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l152d_eval.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l152d_eval_i2c_tsensor.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l152d_eval_lcd.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_comp.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_dma.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_exti.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_gpio.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_it.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_pwr.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_rcc.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_spi.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_syscfg.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_tim.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\stm32l1xx_usart.o"
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\system_stm32l1xx.o" --redirect _Printf=_PrintfFull
 #        --redirect _Scanf=_ScanfFull --no_out_extension -o
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Exe\STM3210E-EVAL.out" --map
-#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
+#        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\List\STM3210E-EVAL.map" --config
-#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\stm32l1xx_flash.icf
+#        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\stm32l1xx_flash.icf
 #        --semihosting --entry __iar_program_start --redirect
 #        __iar_sh_stdout=__iar_sh_stdout_swo --vfe --text_out locale)
 #
@@ -228,7 +228,7 @@ command line/config:
     -------------------------------------------------
     Total:
 
-D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj: [1]
+D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj: [1]
     main.o                    1'412       96      224
     misc.o                      104
     startup_stm32l1xx_hd.o      536
@@ -378,7 +378,7 @@ exit                     0x800'0ebb    0x4  Code  Gb  exit.o [2]
 main                     0x800'0145  0x42e  Code  Gb  main.o [1]
 
 
-[1] = D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj
+[1] = D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj
 [2] = dl7M_tln.a
 [3] = m7M_tl.a
 [4] = rt7M_tl.a
