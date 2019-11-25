@@ -83,24 +83,28 @@ int main(void)
 
   /* SPI configuration ------------------------------------------------------*/
   SPI_Config();
-
   /* SysTick configuration ---------------------------------------------------*/
   SysTickConfig();
-
   /* Initialize LEDs mounted on STM32L152-EVAL board */
+  
+  /*
   STM_EVAL_LEDInit(LED1);
   STM_EVAL_LEDInit(LED2);
   STM_EVAL_LEDInit(LED3);
   STM_EVAL_LEDInit(LED4);
-
+  */
+  
   /* Master board configuration ------------------------------------------------*/
   /* Initialize push-buttons mounted on STM32L152-EVAL board */
+  
+  /*
   STM_EVAL_PBInit(BUTTON_RIGHT, BUTTON_MODE_GPIO);
   STM_EVAL_PBInit(BUTTON_LEFT, BUTTON_MODE_GPIO);
   STM_EVAL_PBInit(BUTTON_UP, BUTTON_MODE_GPIO);
   STM_EVAL_PBInit(BUTTON_DOWN, BUTTON_MODE_GPIO);
   STM_EVAL_PBInit(BUTTON_SEL, BUTTON_MODE_GPIO);
-
+  */
+  
   /* Initializes the SPI communication */
   SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
   SPI_Init(SPIx, &SPI_InitStructure);
