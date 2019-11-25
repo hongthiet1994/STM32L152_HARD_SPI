@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3_2\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3_2\arm\bin\armjlink2.dll" 
+
+"D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\arm\8.40.2\ST\STM32L1xx\StdPeriph_Lib\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL RAM Debug\Exe\STM3210E-EVAL.out" 
+
+--plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3_2\arm\bin\armbat.dll" 
+
+--device_macro="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3_2\arm\config\debugger\ST\STM32L1xx.dmac" 
+
+
+
+
