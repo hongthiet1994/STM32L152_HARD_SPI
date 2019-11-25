@@ -61,7 +61,7 @@ static void TimeOut_UserCallback(void);
 static TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength);
 #ifdef SPI_MASTER
 static void TIM_Config(void);
-static JOYState_TypeDef Read_Joystick(void);
+//static JOYState_TypeDef Read_Joystick(void);
 static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLength);
 #endif
 
@@ -75,12 +75,12 @@ static void Fill_Buffer(uint8_t *pBuffer, uint16_t BufferLength);
 int main(void)
 {
   /*!< At this stage the microcontroller clock setting is already configured,
-       this is done through SystemInit() function which is called from startup
-       file (startup_stm32l1xx_xx.s) before to branch to application main.
-       To reconfigure the default setting of SystemInit() function, refer to
-       system_stm32l1xx.c file
-     */
-
+  this is done through SystemInit() function which is called from startup
+  file (startup_stm32l1xx_xx.s) before to branch to application main.
+  To reconfigure the default setting of SystemInit() function, refer to
+  system_stm32l1xx.c file
+  */
+  
   /* SPI configuration ------------------------------------------------------*/
   SPI_Config();
   /* SysTick configuration ---------------------------------------------------*/
@@ -108,16 +108,16 @@ int main(void)
   /* Initializes the SPI communication */
   SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
   SPI_Init(SPIx, &SPI_InitStructure);
-
+  
   /* TIM configuration ------------------------------------------------------*/
   TIM_Config(); 
-
+  
   /* Enable the SPI peripheral */
   SPI_Cmd(SPIx, ENABLE);
   
   /* Enable NSS output for master mode */
   SPI_SSOutputCmd(SPIx, ENABLE);
-
+  
   /* TIM Capture Compare DMA Request enable */
   TIM_DMACmd(TIMx, TIMx_DMA_CHANNEL, ENABLE);
   
@@ -130,7 +130,7 @@ int main(void)
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
     DMA_InitStructure.DMA_Priority = DMA_Priority_High;
     DMA_Init(SPIx_RX_DMA_CHANNEL, &DMA_InitStructure);
-
+    
     /* DMA TIM trigger channel Configuration */
     DMA_InitStructure.DMA_BufferSize = (uint16_t)1;
     DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)SPIx_DR_ADDRESS;
@@ -138,86 +138,89 @@ int main(void)
     DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
     DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
     DMA_Init(TIMx_CHANNEL_DMA_CHANNEL, &DMA_InitStructure);
-
+    
     /* Enable the SPI Rx DMA request */
     SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, ENABLE);
-  
+    
     CommandTransmitted = 0x00;
     CommandReceived = 0x00;
-
+    
     /* Clear the RxBuffer */
     Fill_Buffer(RxBuffer, TXBUFFERSIZE);
-
-//    PressedButton = Read_Joystick();
-//    while (PressedButton == JOY_NONE)
-//    {
-//      PressedButton = Read_Joystick();
-//    }
-//
-//    switch (PressedButton)
-//    {
-//      /* JOY_RIGHT button pressed */
-//      case JOY_RIGHT:
-//        CommandTransmitted = CMD_RIGHT;
-//        NumberOfByte = CMD_RIGHT_SIZE;
-//        break;
-//      /* JOY_LEFT button pressed */ 
-//      case JOY_LEFT:
-//        CommandTransmitted = CMD_LEFT;
-//        NumberOfByte = CMD_LEFT_SIZE;
-//        break;
-//      /* JOY_UP button pressed */
-//      case JOY_UP:
-//        CommandTransmitted = CMD_UP;
-//        NumberOfByte = CMD_UP_SIZE;
-//        break;
-//      /* JOY_DOWN button pressed */
-//      case JOY_DOWN:
-//        CommandTransmitted = CMD_DOWN;
-//        NumberOfByte = CMD_DOWN_SIZE;
-//        break;
-//      /* JOY_SEL button pressed */
-//      case JOY_SEL:
-//        CommandTransmitted = CMD_SEL;
-//        NumberOfByte = CMD_SEL_SIZE;
-//        break;
-//      default:
-//        break;
-//    }
-//    */
+    
+    //    PressedButton = Read_Joystick();
+    //    while (PressedButton == JOY_NONE)
+    //    {
+    //      PressedButton = Read_Joystick();
+    //    }
+    //
+    //    switch (PressedButton)
+    //    {
+    //      /* JOY_RIGHT button pressed */
+    //      case JOY_RIGHT:
+    //        CommandTransmitted = CMD_RIGHT;
+    //        NumberOfByte = CMD_RIGHT_SIZE;
+    //        break;
+    //      /* JOY_LEFT button pressed */ 
+    //      case JOY_LEFT:
+    //        CommandTransmitted = CMD_LEFT;
+    //        NumberOfByte = CMD_LEFT_SIZE;
+    //        break;
+    //      /* JOY_UP button pressed */
+    //      case JOY_UP:
+    //        CommandTransmitted = CMD_UP;
+    //        NumberOfByte = CMD_UP_SIZE;
+    //        break;
+    //      /* JOY_DOWN button pressed */
+    //      case JOY_DOWN:
+    //        CommandTransmitted = CMD_DOWN;
+    //        NumberOfByte = CMD_DOWN_SIZE;
+    //        break;
+    //      /* JOY_SEL button pressed */
+    //      case JOY_SEL:
+    //        CommandTransmitted = CMD_SEL;
+    //        NumberOfByte = CMD_SEL_SIZE;
+    //        break;
+    //      default:
+    //        break;
+    //    }
+    //    */
     
     /* Enable the DMA channel */
     DMA_Cmd(SPIx_RX_DMA_CHANNEL, ENABLE);
     
     /* Enable DMA1 TIM Trigger Channel */
     DMA_Cmd(TIMx_CHANNEL_DMA_CHANNEL, ENABLE);
-
+    
     /* TIM enable counter */
     TIM_Cmd(TIMx, ENABLE);
     
     /* Wait the SPI DMA Rx transfer complete or time out*/
     TimeOut = USER_TIMEOUT;
     while ((DMA_GetFlagStatus(SPIx_RX_DMA_FLAG_TC) == RESET)&&(TimeOut != 0x00))
-    {}
+    {
+    }
     if(TimeOut == 0)
-     {
-       TimeOut_UserCallback();
-     }
+    {
+      TimeOut_UserCallback();
+    }
     /* The BSY flag can be monitored to ensure that the SPI communication is complete.
-       This is required to avoid corrupting the last transmission before disabling 
-       the SPI or entering the Stop mode. The software must first wait until TXE=1
-       and then until BSY=0.*/
+    This is required to avoid corrupting the last transmission before disabling 
+    the SPI or entering the Stop mode. The software must first wait until TXE=1
+    and then until BSY=0.*/
     TimeOut = USER_TIMEOUT;
     while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_TXE) == RESET)&&(TimeOut != 0x00))
-    {}
+    {
+    }
     if(TimeOut == 0)
-     {
-       TimeOut_UserCallback();
-     }
+    {
+      TimeOut_UserCallback();
+    }
     
     TimeOut = USER_TIMEOUT;
     while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_BSY) == SET)&&(TimeOut != 0x00))
-    {}
+    {
+    }
     if(TimeOut == 0)
     {
       TimeOut_UserCallback();
@@ -246,7 +249,7 @@ int main(void)
       DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
       DMA_InitStructure.DMA_Priority = DMA_Priority_High;
       DMA_Init(SPIx_RX_DMA_CHANNEL, &DMA_InitStructure);
-  
+      
       /* DMA channel Tx of SPI Configuration */
       DMA_InitStructure.DMA_BufferSize = (uint16_t)NumberOfByte;
       DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)SPIx_DR_ADDRESS;
@@ -254,13 +257,13 @@ int main(void)
       DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralDST;
       DMA_InitStructure.DMA_Priority = DMA_Priority_Low;
       DMA_Init(TIMx_CHANNEL_DMA_CHANNEL, &DMA_InitStructure);
-  
+      
       /* Enable the SPI Rx DMA request */
       SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, ENABLE);
-  
+      
       /* Enable the DMA channel */
       DMA_Cmd(SPIx_RX_DMA_CHANNEL, ENABLE);
-     
+      
       /* Enable DMA1 TIM Trigger Channel */
       DMA_Cmd(TIMx_CHANNEL_DMA_CHANNEL, ENABLE);
       
@@ -270,103 +273,106 @@ int main(void)
       /* Wait the SPI Rx DMA transfer complete or time out */
       TimeOut = USER_TIMEOUT;
       while ((DMA_GetFlagStatus(SPIx_RX_DMA_FLAG_TC) == RESET)&&(TimeOut != 0x00))
-      {}
+      {
+      }
       if(TimeOut == 0)
-       {
-         TimeOut_UserCallback();
-       }
+      {
+        TimeOut_UserCallback();
+      }
       /* The BSY flag can be monitored to ensure that the SPI communication is complete.
-         This is required to avoid corrupting the last transmission before disabling 
-         the SPI or entering the Stop mode. The software must first wait until TXE=1
-         and then until BSY=0.*/
+      This is required to avoid corrupting the last transmission before disabling 
+      the SPI or entering the Stop mode. The software must first wait until TXE=1
+      and then until BSY=0.*/
       TimeOut = USER_TIMEOUT;
       while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_TXE) == RESET)&&(TimeOut != 0x00))
-      {}
+      {
+      }
       if(TimeOut == 0)
-       {
-         TimeOut_UserCallback();
-       }
-    
+      {
+        TimeOut_UserCallback();
+      }
+      
       TimeOut = USER_TIMEOUT;
       while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_BSY) == SET)&&(TimeOut != 0x00))
-      {}
+      {
+      }
       if(TimeOut == 0)
-       {
-         TimeOut_UserCallback();
-       }
-        
+      {
+        TimeOut_UserCallback();
+      }
+      
       /* Clear DMA1 global flags */
       DMA_ClearFlag(TIMx_CHANNEL_DMA_FLAG_GL);
       DMA_ClearFlag(SPIx_RX_DMA_FLAG_GL);
-    
+      
       /* Disable the DMA channels */
       DMA_Cmd(SPIx_RX_DMA_CHANNEL, DISABLE);
       DMA_Cmd(TIMx_CHANNEL_DMA_CHANNEL, DISABLE);
-   
+      
       /* Disable the SPI Rx and Tx DMA requests */
       SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, DISABLE);
-     
+      
       /* TIM disable counter */
       TIM_Cmd(TIMx, DISABLE);
-     
+      
       switch (NumberOfByte)
       {
         /* CMD_RIGHT command received */
-        case CMD_RIGHT_SIZE:
-          if ((Buffercmp(TxBuffer, RxBuffer, CMD_RIGHT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-          {
-            /* Turn ON LED2 and LED3 */
-            STM_EVAL_LEDOn(LED2);
-            STM_EVAL_LEDOn(LED3);
-            /* Turn OFF LED4 */
-            STM_EVAL_LEDOff(LED4);
-          }
-          break;
+      case CMD_RIGHT_SIZE:
+        if ((Buffercmp(TxBuffer, RxBuffer, CMD_RIGHT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
+        {
+          /* Turn ON LED2 and LED3 */
+          STM_EVAL_LEDOn(LED2);
+          STM_EVAL_LEDOn(LED3);
+          /* Turn OFF LED4 */
+          STM_EVAL_LEDOff(LED4);
+        }
+        break;
         /* CMD_LEFT command received */
-        case CMD_LEFT_SIZE:
-          if ((Buffercmp(TxBuffer, RxBuffer, CMD_LEFT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-          {
-            /* Turn ON LED4 */
-            STM_EVAL_LEDOn(LED4);
-            /* Turn OFF LED2 and LED3 */
-            STM_EVAL_LEDOff(LED2);
-            STM_EVAL_LEDOff(LED3);
-          }
-          break;
+      case CMD_LEFT_SIZE:
+        if ((Buffercmp(TxBuffer, RxBuffer, CMD_LEFT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
+        {
+          /* Turn ON LED4 */
+          STM_EVAL_LEDOn(LED4);
+          /* Turn OFF LED2 and LED3 */
+          STM_EVAL_LEDOff(LED2);
+          STM_EVAL_LEDOff(LED3);
+        }
+        break;
         /* CMD_UP command received */
-        case CMD_UP_SIZE:
-          if ((Buffercmp(TxBuffer, RxBuffer, CMD_UP_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-          {
-            /* Turn ON LED2 */
-            STM_EVAL_LEDOn(LED2);
-            /* Turn OFF LED3 and LED4 */
-            STM_EVAL_LEDOff(LED3);
-            STM_EVAL_LEDOff(LED4);
-          }
-          break;
+      case CMD_UP_SIZE:
+        if ((Buffercmp(TxBuffer, RxBuffer, CMD_UP_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
+        {
+          /* Turn ON LED2 */
+          STM_EVAL_LEDOn(LED2);
+          /* Turn OFF LED3 and LED4 */
+          STM_EVAL_LEDOff(LED3);
+          STM_EVAL_LEDOff(LED4);
+        }
+        break;
         /* CMD_DOWN command received */
-        case CMD_DOWN_SIZE:
-          if ((Buffercmp(TxBuffer, RxBuffer, CMD_DOWN_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-          {
-            /* Turn ON LED3 */
-            STM_EVAL_LEDOn(LED3);
-            /* Turn OFF LED2 and LED4 */
-            STM_EVAL_LEDOff(LED2);
-            STM_EVAL_LEDOff(LED4);
-          }
-          break;
+      case CMD_DOWN_SIZE:
+        if ((Buffercmp(TxBuffer, RxBuffer, CMD_DOWN_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
+        {
+          /* Turn ON LED3 */
+          STM_EVAL_LEDOn(LED3);
+          /* Turn OFF LED2 and LED4 */
+          STM_EVAL_LEDOff(LED2);
+          STM_EVAL_LEDOff(LED4);
+        }
+        break;
         /* CMD_SEL command received */
-        case CMD_SEL_SIZE:
-          if ((Buffercmp(TxBuffer, RxBuffer, CMD_SEL_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-          {
-            /* Turn ON LED2, LED3 and LED4 */
-            STM_EVAL_LEDOn(LED2);
-            STM_EVAL_LEDOn(LED3);
-            STM_EVAL_LEDOn(LED4);
-          }
-          break;
-        default:
-          break;
+      case CMD_SEL_SIZE:
+        if ((Buffercmp(TxBuffer, RxBuffer, CMD_SEL_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
+        {
+          /* Turn ON LED2, LED3 and LED4 */
+          STM_EVAL_LEDOn(LED2);
+          STM_EVAL_LEDOn(LED3);
+          STM_EVAL_LEDOn(LED4);
+        }
+        break;
+      default:
+        break;
       }
     }
   }
@@ -545,54 +551,55 @@ static void TIM_Config(void)
  
   TIMx_CHANNEL_INIT(TIMx, &TIM_OCInitStructure);
 }
-/**
-* @brief  Reads key from evaluationboard.
-* @param  None
-* @retval Return JOY_RIGHT, JOY_LEFT, JOY_SEL, JOY_UP, JOY_DOWN or JOY_NONE
-*/
-static JOYState_TypeDef Read_Joystick(void)
-{
-  /* "JOY_RIGHT" key is pressed */
-  if (!STM_EVAL_PBGetState(BUTTON_RIGHT))
-  {
-    while (STM_EVAL_PBGetState(BUTTON_RIGHT) == RESET)
-    {}
-    return JOY_RIGHT;
-  }
-  /* "JOY_LEFT" key is pressed */
-  if (!STM_EVAL_PBGetState(BUTTON_LEFT))
-  {
-    while (STM_EVAL_PBGetState(BUTTON_LEFT) == RESET)
-    {}
-    return JOY_LEFT;
-  }
-  /* "JOY_UP" key is pressed */
-  if (!STM_EVAL_PBGetState(BUTTON_UP))
-  {
-    while (STM_EVAL_PBGetState(BUTTON_UP) == RESET)
-    {}
-    return JOY_UP;
-  }
-  /* "JOY_DOWN" key is pressed */
-  if (!STM_EVAL_PBGetState(BUTTON_DOWN))
-  {
-    while (STM_EVAL_PBGetState(BUTTON_DOWN) == RESET)
-    {}
-    return JOY_DOWN;
-  }
-  /* "JOY_SEL" key is pressed */
-  if (!STM_EVAL_PBGetState(BUTTON_SEL))
-  {
-    while (STM_EVAL_PBGetState(BUTTON_SEL) == RESET)
-    {}
-    return JOY_SEL;
-  }
-  /* No key is pressed */
-  else
-  {
-    return JOY_NONE;
-  }
-}
+//
+///**
+//* @brief  Reads key from evaluationboard.
+//* @param  None
+//* @retval Return JOY_RIGHT, JOY_LEFT, JOY_SEL, JOY_UP, JOY_DOWN or JOY_NONE
+//*/
+//static JOYState_TypeDef Read_Joystick(void)
+//{
+//  /* "JOY_RIGHT" key is pressed */
+//  if (!STM_EVAL_PBGetState(BUTTON_RIGHT))
+//  {
+//    while (STM_EVAL_PBGetState(BUTTON_RIGHT) == RESET)
+//    {}
+//    return JOY_RIGHT;
+//  }
+//  /* "JOY_LEFT" key is pressed */
+//  if (!STM_EVAL_PBGetState(BUTTON_LEFT))
+//  {
+//    while (STM_EVAL_PBGetState(BUTTON_LEFT) == RESET)
+//    {}
+//    return JOY_LEFT;
+//  }
+//  /* "JOY_UP" key is pressed */
+//  if (!STM_EVAL_PBGetState(BUTTON_UP))
+//  {
+//    while (STM_EVAL_PBGetState(BUTTON_UP) == RESET)
+//    {}
+//    return JOY_UP;
+//  }
+//  /* "JOY_DOWN" key is pressed */
+//  if (!STM_EVAL_PBGetState(BUTTON_DOWN))
+//  {
+//    while (STM_EVAL_PBGetState(BUTTON_DOWN) == RESET)
+//    {}
+//    return JOY_DOWN;
+//  }
+//  /* "JOY_SEL" key is pressed */
+//  if (!STM_EVAL_PBGetState(BUTTON_SEL))
+//  {
+//    while (STM_EVAL_PBGetState(BUTTON_SEL) == RESET)
+//    {}
+//    return JOY_SEL;
+//  }
+//  /* No key is pressed */
+//  else
+//  {
+//    return JOY_NONE;
+//  }
+//}
 
 /**
   * @brief  Fills buffer.
