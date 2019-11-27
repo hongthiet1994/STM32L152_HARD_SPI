@@ -384,8 +384,7 @@ static void SPI_Config(void)
   /* Configure the TIM channelx capture compare as DMA Trigger */
   GPIO_InitStructure.GPIO_Pin =  TIMx_TRIGGER_PIN;
   GPIO_Init(TIMx_TRIGGER_GPIO_PORT, &GPIO_InitStructure);
-
-  /* SPI configuration -------------------------------------------------------*/
+  /*--------------------------SPI configuration--------------------------*/
   SPI_I2S_DeInit(SPIx);
   SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
   SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
@@ -396,7 +395,7 @@ static void SPI_Config(void)
   SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
   SPI_InitStructure.SPI_CRCPolynomial = 7;
 
-  /* DMA Configuration -------------------------------------------------------*/
+  /*--------------------------DMA Configuration--------------------------*/
   DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_Byte;
   DMA_InitStructure.DMA_MemoryDataSize =  DMA_MemoryDataSize_Byte;
   DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
