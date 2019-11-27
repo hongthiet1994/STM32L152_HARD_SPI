@@ -2443,6 +2443,9 @@
             <name>$PROJ_DIR$\main.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\main.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\stm32l1xx_it.c</name>
         </file>
     </group>

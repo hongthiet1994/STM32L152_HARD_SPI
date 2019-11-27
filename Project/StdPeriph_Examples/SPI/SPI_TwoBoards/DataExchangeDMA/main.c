@@ -85,25 +85,7 @@ int main(void)
   SPI_Config();
   /* SysTick configuration ---------------------------------------------------*/
   SysTickConfig();
-  /* Initialize LEDs mounted on STM32L152-EVAL board */
-  
-  /*
-  STM_EVAL_LEDInit(LED1);
-  STM_EVAL_LEDInit(LED2);
-  STM_EVAL_LEDInit(LED3);
-  STM_EVAL_LEDInit(LED4);
-  */
-  
-  /* Master board configuration ------------------------------------------------*/
-  /* Initialize push-buttons mounted on STM32L152-EVAL board */
-  
-  /*
-  STM_EVAL_PBInit(BUTTON_RIGHT, BUTTON_MODE_GPIO);
-  STM_EVAL_PBInit(BUTTON_LEFT, BUTTON_MODE_GPIO);
-  STM_EVAL_PBInit(BUTTON_UP, BUTTON_MODE_GPIO);
-  STM_EVAL_PBInit(BUTTON_DOWN, BUTTON_MODE_GPIO);
-  STM_EVAL_PBInit(BUTTON_SEL, BUTTON_MODE_GPIO);
-  */
+ 
   
   /* Initializes the SPI communication */
   SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
@@ -142,49 +124,12 @@ int main(void)
     /* Enable the SPI Rx DMA request */
     SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, ENABLE);
     
-    CommandTransmitted = 0x00;
-    CommandReceived = 0x00;
+    CommandTransmitted = 0x02;
+    CommandReceived = 0x01;
     
     /* Clear the RxBuffer */
-    Fill_Buffer(RxBuffer, TXBUFFERSIZE);
+    Fill_Buffer(RxBuffer, TXBUFFERSIZE);    
     
-    //    PressedButton = Read_Joystick();
-    //    while (PressedButton == JOY_NONE)
-    //    {
-    //      PressedButton = Read_Joystick();
-    //    }
-    //
-    //    switch (PressedButton)
-    //    {
-    //      /* JOY_RIGHT button pressed */
-    //      case JOY_RIGHT:
-    //        CommandTransmitted = CMD_RIGHT;
-    //        NumberOfByte = CMD_RIGHT_SIZE;
-    //        break;
-    //      /* JOY_LEFT button pressed */ 
-    //      case JOY_LEFT:
-    //        CommandTransmitted = CMD_LEFT;
-    //        NumberOfByte = CMD_LEFT_SIZE;
-    //        break;
-    //      /* JOY_UP button pressed */
-    //      case JOY_UP:
-    //        CommandTransmitted = CMD_UP;
-    //        NumberOfByte = CMD_UP_SIZE;
-    //        break;
-    //      /* JOY_DOWN button pressed */
-    //      case JOY_DOWN:
-    //        CommandTransmitted = CMD_DOWN;
-    //        NumberOfByte = CMD_DOWN_SIZE;
-    //        break;
-    //      /* JOY_SEL button pressed */
-    //      case JOY_SEL:
-    //        CommandTransmitted = CMD_SEL;
-    //        NumberOfByte = CMD_SEL_SIZE;
-    //        break;
-    //      default:
-    //        break;
-    //    }
-    //    */
     
     /* Enable the DMA channel */
     DMA_Cmd(SPIx_RX_DMA_CHANNEL, ENABLE);
@@ -199,6 +144,7 @@ int main(void)
     TimeOut = USER_TIMEOUT;
     while ((DMA_GetFlagStatus(SPIx_RX_DMA_FLAG_TC) == RESET)&&(TimeOut != 0x00))
     {
+      
     }
     if(TimeOut == 0)
     {
@@ -211,6 +157,7 @@ int main(void)
     TimeOut = USER_TIMEOUT;
     while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_TXE) == RESET)&&(TimeOut != 0x00))
     {
+      
     }
     if(TimeOut == 0)
     {
@@ -220,6 +167,7 @@ int main(void)
     TimeOut = USER_TIMEOUT;
     while ((SPI_GetFlagStatus(SPIx, SPI_I2S_FLAG_BSY) == SET)&&(TimeOut != 0x00))
     {
+      
     }
     if(TimeOut == 0)
     {

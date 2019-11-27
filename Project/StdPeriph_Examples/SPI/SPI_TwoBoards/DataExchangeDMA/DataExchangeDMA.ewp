@@ -2066,7 +2066,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
+                    <state>DataExchangeDMA_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
@@ -2187,6 +2187,9 @@
         <name>User</name>
         <file>
             <name>$PROJ_DIR$\main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\stm32l1xx_it.c</name>

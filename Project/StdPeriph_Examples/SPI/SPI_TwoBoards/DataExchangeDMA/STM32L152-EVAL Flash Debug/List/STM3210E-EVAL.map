@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.2.214/W32 for ARM                  25/Nov/2019  17:08:01
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  27/Nov/2019  08:57:47
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
@@ -10,7 +10,7 @@
 #        D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\List\STM3210E-EVAL.map
 #    Command line =
-#        -f C:\Users\hongt\AppData\Local\Temp\EW6F86.tmp
+#        -f C:\Users\hongt\AppData\Local\Temp\EW138A.tmp
 #        ("D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
 #        Flash Debug\Obj\main.o"
 #        "D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL
@@ -95,29 +95,28 @@ initialize by copy { rw };
   .intvec            ro code   0x800'0000  0x124  startup_stm32l1xx_hd.o [1]
                              - 0x800'0124  0x124
 
-"P1":                                      0xbc8
-  .text              ro code   0x800'0124  0x486  main.o [1]
-  .text              ro code   0x800'05ac   0x78  stm32l1xx_rcc.o [1]
-  .text              ro code   0x800'0624   0x9c  stm32l1xx_gpio.o [1]
-  .text              ro code   0x800'06c0   0xee  stm32l1xx_spi.o [1]
-  .text              ro code   0x800'07b0   0xc6  stm32l1xx_tim.o [1]
-  .text              ro code   0x800'0878   0x8c  stm32l1xx_dma.o [1]
-  .text              ro code   0x800'0904   0x4c  stm32l152d_eval.o [1]
-  .text              ro code   0x800'0950    0x6  ABImemclr4.o [4]
-  .text              ro code   0x800'0958   0x32  ABImemset48.o [4]
-  .text              ro code   0x800'098c  0x100  system_stm32l1xx.o [1]
-  .text              ro code   0x800'0a8c   0x40  stm32l1xx_it.o [1]
-  .text              ro code   0x800'0acc   0x38  packbits_init_single.o [4]
-  .text              ro code   0x800'0b04   0x28  data_init.o [4]
-  .iar.init_table    const     0x800'0b2c   0x10  - Linker created -
-  .text              ro code   0x800'0b3c   0x1e  cmain.o [4]
-  .text              ro code   0x800'0b5a    0x4  low_level_init.o [2]
-  .text              ro code   0x800'0b5e    0x4  exit.o [2]
-  .text              ro code   0x800'0b64    0xa  cexit.o [4]
-  .text              ro code   0x800'0b70   0x14  exit.o [5]
-  .text              ro code   0x800'0b84   0x10  startup_stm32l1xx_hd.o [1]
-  .text              ro code   0x800'0b94    0xc  cstartup_M.o [4]
-  .text              ro code   0x800'0ba0    0x4  startup_stm32l1xx_hd.o [1]
+"P1":                                      0xbcc
+  .text              ro code   0x800'0124  0x48a  main.o [1]
+  .text              ro code   0x800'05b0   0x78  stm32l1xx_rcc.o [1]
+  .text              ro code   0x800'0628   0x9c  stm32l1xx_gpio.o [1]
+  .text              ro code   0x800'06c4   0xee  stm32l1xx_spi.o [1]
+  .text              ro code   0x800'07b4   0xc6  stm32l1xx_tim.o [1]
+  .text              ro code   0x800'087c   0x8c  stm32l1xx_dma.o [1]
+  .text              ro code   0x800'0908   0x4c  stm32l152d_eval.o [1]
+  .text              ro code   0x800'0954    0x6  ABImemclr4.o [4]
+  .text              ro code   0x800'095c   0x32  ABImemset48.o [4]
+  .text              ro code   0x800'0990  0x100  system_stm32l1xx.o [1]
+  .text              ro code   0x800'0a90   0x40  stm32l1xx_it.o [1]
+  .text              ro code   0x800'0ad0   0x38  packbits_init_single.o [4]
+  .text              ro code   0x800'0b08   0x28  data_init.o [4]
+  .iar.init_table    const     0x800'0b30   0x10  - Linker created -
+  .text              ro code   0x800'0b40   0x1e  cmain.o [4]
+  .text              ro code   0x800'0b5e    0x4  low_level_init.o [2]
+  .text              ro code   0x800'0b62    0x4  exit.o [2]
+  .text              ro code   0x800'0b68    0xa  cexit.o [4]
+  .text              ro code   0x800'0b74   0x14  exit.o [5]
+  .text              ro code   0x800'0b88   0x10  startup_stm32l1xx_hd.o [1]
+  .text              ro code   0x800'0b98    0xc  cstartup_M.o [4]
   .text              ro code   0x800'0ba4    0x4  startup_stm32l1xx_hd.o [1]
   .text              ro code   0x800'0ba8    0x4  startup_stm32l1xx_hd.o [1]
   .text              ro code   0x800'0bac    0x4  startup_stm32l1xx_hd.o [1]
@@ -174,9 +173,10 @@ initialize by copy { rw };
   .text              ro code   0x800'0c78    0x4  startup_stm32l1xx_hd.o [1]
   .text              ro code   0x800'0c7c    0x4  startup_stm32l1xx_hd.o [1]
   .text              ro code   0x800'0c80    0x4  startup_stm32l1xx_hd.o [1]
-  .rodata            const     0x800'0c84    0x0  packbits_init_single.o [4]
-  Initializer bytes  const     0x800'0c84   0x68  <for P2-1>
-                             - 0x800'0cec  0xbc8
+  .text              ro code   0x800'0c84    0x4  startup_stm32l1xx_hd.o [1]
+  .rodata            const     0x800'0c88    0x0  packbits_init_single.o [4]
+  Initializer bytes  const     0x800'0c88   0x68  <for P2-1>
+                             - 0x800'0cf0  0xbcc
 
 "P2", part 1 of 2:                         0x10d
   P2-1                        0x2000'0000  0x10d  <Init block>
@@ -195,7 +195,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-   0x800'0cec   0x801'ffff  0x1'f314
+   0x800'0cf0   0x801'ffff  0x1'f310
   0x2000'010d  0x2000'010f       0x3
   0x2000'0510  0x2000'3fff    0x3af0
 
@@ -208,7 +208,7 @@ Unused ranges:
           -------      ----
 Copy/packbits (__iar_packbits_init_single3)
     1 source range, total size 0x68 (38% of destination):
-           0x800'0c84   0x68
+           0x800'0c88   0x68
     1 destination range, total size 0x10d:
           0x2000'0000  0x10d
 
@@ -225,7 +225,7 @@ command line/config:
     Total:
 
 D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj: [1]
-    main.o                    1'158       85      220
+    main.o                    1'162       85      220
     startup_stm32l1xx_hd.o      536
     stm32l152d_eval.o            76        6       16
     stm32l1xx_dma.o             140
@@ -236,7 +236,7 @@ D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph
     stm32l1xx_tim.o             198
     system_stm32l1xx.o          256       12       32
     -------------------------------------------------
-    Total:                    2'942      104      269
+    Total:                    2'946      104      269
 
 dl7M_tln.a: [2]
     exit.o                        4
@@ -267,7 +267,7 @@ shb_l.a: [5]
     Gaps                         14
     Linker created                        16    1'024
 -----------------------------------------------------
-    Grand Total:              3'188      120    1'293
+    Grand Total:              3'192      120    1'293
 
 
 *******************************************************************************
@@ -276,82 +276,82 @@ shb_l.a: [5]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base    0x800'0b2c          --   Gb  - Linker created -
-.iar.init_table$$Limit   0x800'0b3c          --   Gb  - Linker created -
-?main                    0x800'0b3d         Code  Gb  cmain.o [4]
+.iar.init_table$$Base    0x800'0b30          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0b40          --   Gb  - Linker created -
+?main                    0x800'0b41         Code  Gb  cmain.o [4]
 AHBPrescTable           0x2000'00f8   0x10  Data  Gb  system_stm32l1xx.o [1]
-Buffercmp                0x800'058d   0x1e  Code  Lc  main.o [1]
-BusFault_Handler         0x800'0a93    0x2  Code  Gb  stm32l1xx_it.o [1]
+Buffercmp                0x800'0591   0x1e  Code  Lc  main.o [1]
+BusFault_Handler         0x800'0a97    0x2  Code  Gb  stm32l1xx_it.o [1]
 CSTACK$$Base            0x2000'0110          --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'0510          --   Gb  - Linker created -
 CommandReceived         0x2000'0098    0x4  Data  Gb  main.o [1]
 CommandTransmitted      0x2000'0094    0x4  Data  Gb  main.o [1]
 Counter                 0x2000'010c    0x1  Data  Gb  stm32l1xx_it.o [1]
-DMA_ClearFlag            0x800'08e1    0x8  Code  Gb  stm32l1xx_dma.o [1]
-DMA_Cmd                  0x800'08b1   0x18  Code  Gb  stm32l1xx_dma.o [1]
-DMA_GetFlagStatus        0x800'08c9   0x18  Code  Gb  stm32l1xx_dma.o [1]
-DMA_Init                 0x800'0879   0x38  Code  Gb  stm32l1xx_dma.o [1]
+DMA_ClearFlag            0x800'08e5    0x8  Code  Gb  stm32l1xx_dma.o [1]
+DMA_Cmd                  0x800'08b5   0x18  Code  Gb  stm32l1xx_dma.o [1]
+DMA_GetFlagStatus        0x800'08cd   0x18  Code  Gb  stm32l1xx_dma.o [1]
+DMA_Init                 0x800'087d   0x38  Code  Gb  stm32l1xx_dma.o [1]
 DMA_InitStructure       0x2000'0068   0x2c  Data  Gb  main.o [1]
-DebugMon_Handler         0x800'0a99    0x2  Code  Gb  stm32l1xx_it.o [1]
-GPIO_Init                0x800'0625   0x7a  Code  Gb  stm32l1xx_gpio.o [1]
-GPIO_PIN                 0x800'0948    0x8  Data  Gb  stm32l152d_eval.o [1]
+DebugMon_Handler         0x800'0a9d    0x2  Code  Gb  stm32l1xx_it.o [1]
+GPIO_Init                0x800'0629   0x7a  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_PIN                 0x800'094c    0x8  Data  Gb  stm32l152d_eval.o [1]
 GPIO_PORT               0x2000'00dc   0x10  Data  Gb  stm32l152d_eval.o [1]
-GPIO_PinAFConfig         0x800'069f   0x22  Code  Gb  stm32l1xx_gpio.o [1]
-HardFault_Handler        0x800'0a8f    0x2  Code  Gb  stm32l1xx_it.o [1]
-MemManage_Handler        0x800'0a91    0x2  Code  Gb  stm32l1xx_it.o [1]
-NMI_Handler              0x800'0a8d    0x2  Code  Gb  stm32l1xx_it.o [1]
+GPIO_PinAFConfig         0x800'06a3   0x22  Code  Gb  stm32l1xx_gpio.o [1]
+HardFault_Handler        0x800'0a93    0x2  Code  Gb  stm32l1xx_it.o [1]
+MemManage_Handler        0x800'0a95    0x2  Code  Gb  stm32l1xx_it.o [1]
+NMI_Handler              0x800'0a91    0x2  Code  Gb  stm32l1xx_it.o [1]
 NumberOfByte            0x2000'0064    0x2  Data  Gb  main.o [1]
 PLLMulTable             0x2000'00ec    0xc  Data  Gb  system_stm32l1xx.o [1]
-PendSV_Handler           0x800'0a9b    0x2  Code  Gb  stm32l1xx_it.o [1]
+PendSV_Handler           0x800'0a9f    0x2  Code  Gb  stm32l1xx_it.o [1]
 PrescalerValue          0x2000'0066    0x2  Data  Gb  main.o [1]
-RCC_AHBPeriphClockCmd    0x800'05ad   0x14  Code  Gb  stm32l1xx_rcc.o [1]
-RCC_APB1PeriphClockCmd   0x800'05d5   0x14  Code  Gb  stm32l1xx_rcc.o [1]
-RCC_APB1PeriphResetCmd   0x800'05fd   0x14  Code  Gb  stm32l1xx_rcc.o [1]
-RCC_APB2PeriphClockCmd   0x800'05c1   0x14  Code  Gb  stm32l1xx_rcc.o [1]
-RCC_APB2PeriphResetCmd   0x800'05e9   0x14  Code  Gb  stm32l1xx_rcc.o [1]
-Region$$Table$$Base      0x800'0b2c          --   Gb  - Linker created -
-Region$$Table$$Limit     0x800'0b3c          --   Gb  - Linker created -
+RCC_AHBPeriphClockCmd    0x800'05b1   0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphClockCmd   0x800'05d9   0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphResetCmd   0x800'0601   0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'05c5   0x14  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB2PeriphResetCmd   0x800'05ed   0x14  Code  Gb  stm32l1xx_rcc.o [1]
+Region$$Table$$Base      0x800'0b30          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0b40          --   Gb  - Linker created -
 RxBuffer                0x2000'0000   0x38  Data  Gb  main.o [1]
-SPI_Cmd                  0x800'075f   0x14  Code  Gb  stm32l1xx_spi.o [1]
-SPI_I2S_DMACmd           0x800'0791   0x10  Code  Gb  stm32l1xx_spi.o [1]
-SPI_I2S_DeInit           0x800'06c1   0x58  Code  Gb  stm32l1xx_spi.o [1]
-SPI_I2S_GetFlagStatus    0x800'07a1    0xe  Code  Gb  stm32l1xx_spi.o [1]
-SPI_Init                 0x800'0725   0x3a  Code  Gb  stm32l1xx_spi.o [1]
+SPI_Cmd                  0x800'0763   0x14  Code  Gb  stm32l1xx_spi.o [1]
+SPI_I2S_DMACmd           0x800'0795   0x10  Code  Gb  stm32l1xx_spi.o [1]
+SPI_I2S_DeInit           0x800'06c5   0x58  Code  Gb  stm32l1xx_spi.o [1]
+SPI_I2S_GetFlagStatus    0x800'07a5    0xe  Code  Gb  stm32l1xx_spi.o [1]
+SPI_Init                 0x800'0729   0x3a  Code  Gb  stm32l1xx_spi.o [1]
 SPI_InitStructure       0x2000'0038   0x14  Data  Gb  main.o [1]
-SPI_SSOutputCmd          0x800'0779   0x18  Code  Gb  stm32l1xx_spi.o [1]
-STM_EVAL_LEDOff          0x800'0919   0x14  Code  Gb  stm32l152d_eval.o [1]
-STM_EVAL_LEDOn           0x800'0905   0x14  Code  Gb  stm32l152d_eval.o [1]
-STM_EVAL_LEDToggle       0x800'092d   0x18  Code  Gb  stm32l152d_eval.o [1]
-SVC_Handler              0x800'0a97    0x2  Code  Gb  stm32l1xx_it.o [1]
-SysTick_Handler          0x800'0a9d   0x26  Code  Gb  stm32l1xx_it.o [1]
+SPI_SSOutputCmd          0x800'077d   0x18  Code  Gb  stm32l1xx_spi.o [1]
+STM_EVAL_LEDOff          0x800'091d   0x14  Code  Gb  stm32l152d_eval.o [1]
+STM_EVAL_LEDOn           0x800'0909   0x14  Code  Gb  stm32l152d_eval.o [1]
+STM_EVAL_LEDToggle       0x800'0931   0x18  Code  Gb  stm32l152d_eval.o [1]
+SVC_Handler              0x800'0a9b    0x2  Code  Gb  stm32l1xx_it.o [1]
+SysTick_Handler          0x800'0aa1   0x26  Code  Gb  stm32l1xx_it.o [1]
 SystemCoreClock         0x2000'0108    0x4  Data  Gb  system_stm32l1xx.o [1]
-SystemInit               0x800'098d   0xe2  Code  Gb  system_stm32l1xx.o [1]
-TIM_Cmd                  0x800'0817   0x14  Code  Gb  stm32l1xx_tim.o [1]
-TIM_DMACmd               0x800'0867   0x10  Code  Gb  stm32l1xx_tim.o [1]
-TIM_OC2Init              0x800'082b   0x2a  Code  Gb  stm32l1xx_tim.o [1]
+SystemInit               0x800'0991   0xe2  Code  Gb  system_stm32l1xx.o [1]
+TIM_Cmd                  0x800'081b   0x14  Code  Gb  stm32l1xx_tim.o [1]
+TIM_DMACmd               0x800'086b   0x10  Code  Gb  stm32l1xx_tim.o [1]
+TIM_OC2Init              0x800'082f   0x2a  Code  Gb  stm32l1xx_tim.o [1]
 TIM_OCInitStructure     0x2000'0058    0xc  Data  Gb  main.o [1]
-TIM_TimeBaseInit         0x800'07b1   0x4c  Code  Gb  stm32l1xx_tim.o [1]
+TIM_TimeBaseInit         0x800'07b5   0x4c  Code  Gb  stm32l1xx_tim.o [1]
 TIM_TimeBaseStructure   0x2000'004c    0xc  Data  Gb  main.o [1]
 TimeOut                 0x2000'009c    0x4  Data  Gb  main.o [1]
 TxBuffer                0x2000'00a0   0x3c  Data  Gb  main.o [1]
-UsageFault_Handler       0x800'0a95    0x2  Code  Gb  stm32l1xx_it.o [1]
+UsageFault_Handler       0x800'0a99    0x2  Code  Gb  stm32l1xx_it.o [1]
 __NVIC_SetPriority       0x800'0125   0x1e  Code  Lc  main.o [1]
-__aeabi_memclr4          0x800'0951         Code  Gb  ABImemclr4.o [4]
-__cmain                  0x800'0b3d         Code  Gb  cmain.o [4]
-__exit                   0x800'0b71   0x14  Code  Gb  exit.o [5]
-__iar_Memset4_word       0x800'0959         Code  Gb  ABImemset48.o [4]
-__iar_Memset8_word       0x800'0959         Code  Gb  ABImemset48.o [4]
-__iar_data_init3         0x800'0b05   0x28  Code  Gb  data_init.o [4]
+__aeabi_memclr4          0x800'0955         Code  Gb  ABImemclr4.o [4]
+__cmain                  0x800'0b41         Code  Gb  cmain.o [4]
+__exit                   0x800'0b75   0x14  Code  Gb  exit.o [5]
+__iar_Memset4_word       0x800'095d         Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word       0x800'095d         Code  Gb  ABImemset48.o [4]
+__iar_data_init3         0x800'0b09   0x28  Code  Gb  data_init.o [4]
 __iar_packbits_init_single3
-                         0x800'0acd   0x38  Code  Gb  packbits_init_single.o [4]
-__iar_program_start      0x800'0b95         Code  Gb  cstartup_M.o [4]
-__low_level_init         0x800'0b5b    0x4  Code  Gb  low_level_init.o [2]
+                         0x800'0ad1   0x38  Code  Gb  packbits_init_single.o [4]
+__iar_program_start      0x800'0b99         Code  Gb  cstartup_M.o [4]
+__low_level_init         0x800'0b5f    0x4  Code  Gb  low_level_init.o [2]
 __vector_table           0x800'0000         Data  Gb  startup_stm32l1xx_hd.o [1]
-_call_main               0x800'0b49         Code  Gb  cmain.o [4]
-_exit                    0x800'0b65         Code  Gb  cexit.o [4]
-_main                    0x800'0b57         Code  Gb  cmain.o [4]
-exit                     0x800'0b5f    0x4  Code  Gb  exit.o [2]
-main                     0x800'0143  0x3ae  Code  Gb  main.o [1]
+_call_main               0x800'0b4d         Code  Gb  cmain.o [4]
+_exit                    0x800'0b69         Code  Gb  cexit.o [4]
+_main                    0x800'0b5b         Code  Gb  cmain.o [4]
+exit                     0x800'0b63    0x4  Code  Gb  exit.o [2]
+main                     0x800'0143  0x3b0  Code  Gb  main.o [1]
 
 
 [1] = D:\1.PKH\1.Project\13.Test_pheripheral\2.Hard_SPI\1.STM32_L152\Project\StdPeriph_Examples\SPI\SPI_TwoBoards\DataExchangeDMA\STM32L152-EVAL Flash Debug\Obj
@@ -360,7 +360,7 @@ main                     0x800'0143  0x3ae  Code  Gb  main.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  3'188 bytes of readonly  code memory
+  3'192 bytes of readonly  code memory
     120 bytes of readonly  data memory
   1'293 bytes of readwrite data memory
 
