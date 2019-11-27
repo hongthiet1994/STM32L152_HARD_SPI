@@ -261,67 +261,7 @@ int main(void)
       SPI_I2S_DMACmd(SPIx, SPI_I2S_DMAReq_Rx, DISABLE);
       
       /* TIM disable counter */
-      TIM_Cmd(TIMx, DISABLE);
-      
-      switch (NumberOfByte)
-      {
-        /* CMD_RIGHT command received */
-      case CMD_RIGHT_SIZE:
-        if ((Buffercmp(TxBuffer, RxBuffer, CMD_RIGHT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-        {
-          /* Turn ON LED2 and LED3 */
-          STM_EVAL_LEDOn(LED2);
-          STM_EVAL_LEDOn(LED3);
-          /* Turn OFF LED4 */
-          STM_EVAL_LEDOff(LED4);
-        }
-        break;
-        /* CMD_LEFT command received */
-      case CMD_LEFT_SIZE:
-        if ((Buffercmp(TxBuffer, RxBuffer, CMD_LEFT_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-        {
-          /* Turn ON LED4 */
-          STM_EVAL_LEDOn(LED4);
-          /* Turn OFF LED2 and LED3 */
-          STM_EVAL_LEDOff(LED2);
-          STM_EVAL_LEDOff(LED3);
-        }
-        break;
-        /* CMD_UP command received */
-      case CMD_UP_SIZE:
-        if ((Buffercmp(TxBuffer, RxBuffer, CMD_UP_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-        {
-          /* Turn ON LED2 */
-          STM_EVAL_LEDOn(LED2);
-          /* Turn OFF LED3 and LED4 */
-          STM_EVAL_LEDOff(LED3);
-          STM_EVAL_LEDOff(LED4);
-        }
-        break;
-        /* CMD_DOWN command received */
-      case CMD_DOWN_SIZE:
-        if ((Buffercmp(TxBuffer, RxBuffer, CMD_DOWN_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-        {
-          /* Turn ON LED3 */
-          STM_EVAL_LEDOn(LED3);
-          /* Turn OFF LED2 and LED4 */
-          STM_EVAL_LEDOff(LED2);
-          STM_EVAL_LEDOff(LED4);
-        }
-        break;
-        /* CMD_SEL command received */
-      case CMD_SEL_SIZE:
-        if ((Buffercmp(TxBuffer, RxBuffer, CMD_SEL_SIZE) != FAILED) && (CommandReceived == CMD_ACK))
-        {
-          /* Turn ON LED2, LED3 and LED4 */
-          STM_EVAL_LEDOn(LED2);
-          STM_EVAL_LEDOn(LED3);
-          STM_EVAL_LEDOn(LED4);
-        }
-        break;
-      default:
-        break;
-      }
+      TIM_Cmd(TIMx, DISABLE);     
     }
   }
 }
