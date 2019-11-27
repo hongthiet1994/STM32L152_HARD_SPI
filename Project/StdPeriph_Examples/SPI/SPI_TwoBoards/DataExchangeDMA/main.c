@@ -499,55 +499,7 @@ static void TIM_Config(void)
  
   TIMx_CHANNEL_INIT(TIMx, &TIM_OCInitStructure);
 }
-//
-///**
-//* @brief  Reads key from evaluationboard.
-//* @param  None
-//* @retval Return JOY_RIGHT, JOY_LEFT, JOY_SEL, JOY_UP, JOY_DOWN or JOY_NONE
-//*/
-//static JOYState_TypeDef Read_Joystick(void)
-//{
-//  /* "JOY_RIGHT" key is pressed */
-//  if (!STM_EVAL_PBGetState(BUTTON_RIGHT))
-//  {
-//    while (STM_EVAL_PBGetState(BUTTON_RIGHT) == RESET)
-//    {}
-//    return JOY_RIGHT;
-//  }
-//  /* "JOY_LEFT" key is pressed */
-//  if (!STM_EVAL_PBGetState(BUTTON_LEFT))
-//  {
-//    while (STM_EVAL_PBGetState(BUTTON_LEFT) == RESET)
-//    {}
-//    return JOY_LEFT;
-//  }
-//  /* "JOY_UP" key is pressed */
-//  if (!STM_EVAL_PBGetState(BUTTON_UP))
-//  {
-//    while (STM_EVAL_PBGetState(BUTTON_UP) == RESET)
-//    {}
-//    return JOY_UP;
-//  }
-//  /* "JOY_DOWN" key is pressed */
-//  if (!STM_EVAL_PBGetState(BUTTON_DOWN))
-//  {
-//    while (STM_EVAL_PBGetState(BUTTON_DOWN) == RESET)
-//    {}
-//    return JOY_DOWN;
-//  }
-//  /* "JOY_SEL" key is pressed */
-//  if (!STM_EVAL_PBGetState(BUTTON_SEL))
-//  {
-//    while (STM_EVAL_PBGetState(BUTTON_SEL) == RESET)
-//    {}
-//    return JOY_SEL;
-//  }
-//  /* No key is pressed */
-//  else
-//  {
-//    return JOY_NONE;
-//  }
-//}
+
 
 /**
   * @brief  Fills buffer.
