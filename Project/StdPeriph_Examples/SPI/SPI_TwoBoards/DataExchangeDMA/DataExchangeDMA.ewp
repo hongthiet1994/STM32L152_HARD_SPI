@@ -1074,15 +1074,15 @@
                 <debug>1</debug>
                 <option>
                     <name>ExePath</name>
-                    <state>STM32L152-EVAL Flash Debug\Exe</state>
+                    <state>Output\Exe</state>
                 </option>
                 <option>
                     <name>ObjPath</name>
-                    <state>STM32L152-EVAL Flash Debug\Obj</state>
+                    <state>Output\Obj</state>
                 </option>
                 <option>
                     <name>ListPath</name>
-                    <state>STM32L152-EVAL Flash Debug\List</state>
+                    <state>Output\List</state>
                 </option>
                 <option>
                     <name>GEndianMode</name>
@@ -1090,11 +1090,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state>Full formatting.</state>
+                    <state>Full formatting, with multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state>Full formatting.</state>
+                    <state>Full formatting, with multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
